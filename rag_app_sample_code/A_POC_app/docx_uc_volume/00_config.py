@@ -3,7 +3,7 @@
 
 # COMMAND ----------
 
-# MAGIC %pip install -U -qqqq pyyaml mlflow mlflow-skinny
+#%pip install -U -qqqq pyyaml mlflow mlflow-skinny
 
 # COMMAND ----------
 
@@ -162,7 +162,7 @@ rag_chain_config = {
         "vector_search_endpoint_name": VECTOR_SEARCH_ENDPOINT,
         # Databricks Model Serving endpoint name
         # This is the generator LLM where your LLM queries are sent.
-        "llm_endpoint_name": "databricks-dbrx-instruct",
+        "llm_endpoint_name": "ingevanboven_vector_search",
     },
     "retriever_config": {
         # Vector Search index that is created by the data pipeline

@@ -1,5 +1,5 @@
 # Databricks notebook source
-# MAGIC %pip install -U -qqqq mlflow mlflow-skinny
+#%pip install -U -qqqq mlflow mlflow-skinny
 
 # COMMAND ----------
 

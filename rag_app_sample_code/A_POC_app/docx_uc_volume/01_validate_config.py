@@ -1,6 +1,6 @@
 # Databricks notebook source
-# MAGIC %pip install -U -qqqq databricks-sdk mlflow mlflow-skinny
-# MAGIC dbutils.library.restartPython()
+#%pip install -U -qqqq databricks-sdk mlflow mlflow-skinny
+#dbutils.library.restartPython()
 
 # COMMAND ----------
 
@@ -123,6 +123,13 @@ def check_endpoint(endpoint_name):
         raise ValueError(f"Model Serving endpoint: {endpoint_name} not ready.")
 
 # LLM
-check_endpoint(embedding_config['embedding_endpoint_name'])
+try:
+    check_endpoint(embedding_config['embedding_endpoint_name'])
+except ValueError as e:
+    print(str(e))
+
 # Embedding
-check_endpoint(rag_chain_config['databricks_resources']['llm_endpoint_name'])
+try:
+    check_endpoint(rag_chain_config['databricks_resources']['llm_endpoint_name'])
+except ValueError as e:
+    print(str(e))

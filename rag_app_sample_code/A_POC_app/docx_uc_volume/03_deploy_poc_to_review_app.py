@@ -4,6 +4,11 @@
 
 # COMMAND ----------
 
+# MAGIC %pip install typing-extensions==4.7.0
+# MAGIC dbutils.library.restartPython()
+
+# COMMAND ----------
+
 import os
 import mlflow
 import time
@@ -62,11 +67,13 @@ with mlflow.start_run(run_name=POC_CHAIN_RUN_NAME):
 
 # COMMAND ----------
 
+#code copied from dev
+
 chain_input = {
     "messages": [
         {
             "role": "user",
-            "content": "What is RAG?", # Replace with a question relevant to your use case
+            "content": "How does the reporting sick works?", # Replace with a question relevant to your use case
         }
     ]
 }
@@ -139,7 +146,7 @@ print(f"\n\nReview App: {deployment_info.review_app_url}")
 
 # COMMAND ----------
 
-user_list = ["eric.peter@databricks.com"]
+user_list = ["joyce.iding@terbergbusinesslease.onmicrosoft.com", "rick.vandenberg@terbergbusinesslease.onmicrosoft.com", "pieter.verhoeven@terbergbusinesslease.onmicrosoft.com"]
 
 # Set the permissions.  If successful, there will be no return value.
 agents.set_permissions(model_name=UC_MODEL_NAME, users=user_list, permission_level=agents.PermissionLevel.CAN_QUERY)

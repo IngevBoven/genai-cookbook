@@ -1,6 +1,6 @@
 # Databricks notebook source
-# MAGIC %pip install -U -qqqq databricks-sdk mlflow mlflow-skinny
-# MAGIC dbutils.library.restartPython()
+#%pip install -U -qqqq databricks-sdk mlflow mlflow-skinny
+dbutils.library.restartPython()
 
 # COMMAND ----------
 
